@@ -41,7 +41,8 @@ export default {
             //console.log(newVal);
             //clearTimeout()
             //setTimeout()
-            this.axios.get('/api/searchList?cityId=10&kw='+newVal,{
+            var cityId=this.$store.state.city.id;
+            this.axios.get('/api/searchList?cityId='+cityId+'&kw='+newVal,{
                 
             }).then((res)=>{
                 var msg=res.data.msg;
